@@ -51,7 +51,6 @@ object SlaEntry {
 case class SlaEntry(rps : Int, elapsedTicks : Int, fract : Int =1, counter : Int =1) {
   // auxiliary functions to recalculate state
   def effectiveRate(gElapsedTicks : Int) : Int = {
-    println(rps, gElapsedTicks, elapsedTicks, fract, counter)
     (1 + counter) / (1 + Math.abs(gElapsedTicks - elapsedTicks))
   }  
   
